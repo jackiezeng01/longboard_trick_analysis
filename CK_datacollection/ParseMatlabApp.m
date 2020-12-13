@@ -1,4 +1,4 @@
-function [MotionData]=CK_parseMatlabData(filename)
+function [MotionData]=ParseMatlabApp(filename)
 %Script reads in files saved from the Matlab App and parses the data from
 %the matlab "timetable" format, to a simple ".mat" file. This code assumes
 %you have saved Acceleration, Orientation, and Angular Velocity.
