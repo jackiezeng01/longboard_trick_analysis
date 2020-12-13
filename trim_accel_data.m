@@ -25,6 +25,6 @@ for j = N:-1:1
     end
 end
 
-trimmedData = accel(data_start:data_end);
+trimmedData = accel(data_start:data_end,:);
 end
 
