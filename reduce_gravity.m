@@ -1,15 +1,18 @@
-function filt_a = reduce_gravity(a, f, reduction_range)
+function filt_a = reduce_gravity(a, Fs, reduction_range)
 % This function takes an acceleration data set and reduces the amplitude of
 % the data at a low frequency range. 
 
 fft_a = fftshift(fft(a));
-figure
-plot(f, 1/length(a)*abs(fft_a))
-hold on
 
-% process data in this range
+N = size(a);
+N = N(1);
+f = linspace(-Fs/2 , Fs/2 - Fs/N, N) + Fs/(2*N)*mod(N,2);
+
+% set range
 low_range = -reduction_range;
 high_range = reduction_range;
+
+% process data for set range
 for k = 1:size(fft_a)
     if (f(k) >= low_range && f(k) <= high_range)
         % Make amplitude smaller
@@ -17,6 +20,7 @@ for k = 1:size(fft_a)
     end
 end
 
+% output
 filt_a = ifft(ifftshift(fft_a));
 end
 

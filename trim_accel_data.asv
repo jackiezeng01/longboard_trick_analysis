@@ -1,0 +1,33 @@
+function trimmedData = trim_accel_data(t, accel, secondsToTrim)
+%trim acceleration data by the number of seconds specified by the user in
+%from both the front and the back. 
+
+N = size(accel);
+N = N(1);
+
+% Loop through t from front to locate start point.:
+for k = 1:size(t)
+    if (t(k) >= secondsToTrim)
+        % Make as data start.
+        data_start = k;
+        break
+    end
+end
+
+
+% Loop through t from back to locate end point:
+end_time = t(N) - secondsToTrim;
+for k = N:-1:1
+  if (t(k) <= end_time)
+        % Make as data start.
+        data_start = k;
+        break
+    end
+end
+
+data_start = 
+data_end = 
+
+trimmedData = inputArg1;
+end
+
