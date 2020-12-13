@@ -2,6 +2,8 @@ function filt_a = reduce_gravity(a, Fs, reduction_range)
 % This function takes an acceleration data set and reduces the amplitude of
 % the data at a low frequency range. 
 
+% This works on parsed accel data (ex. ax, ay, az) and not the 3 column vector.
+
 fft_a = fftshift(fft(a));
 
 N = size(a);
