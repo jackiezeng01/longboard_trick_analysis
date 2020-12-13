@@ -1,4 +1,4 @@
-function trimmedData = trim_accel_data(t, accel, secondsToTrim)
+function [trimmedTime, trimmedData] = trim_accel_data(t, accel, secondsToTrim)
 %trim acceleration data by the number of seconds specified by the user in
 %from both the front and the back. 
 
@@ -26,5 +26,6 @@ for j = N:-1:1
 end
 
 trimmedData = accel(data_start:data_end,:);
+trimmedTime = t(data_start:data_end);
 end
 
