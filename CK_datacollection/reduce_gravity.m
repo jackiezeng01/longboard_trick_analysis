@@ -18,7 +18,7 @@ high_range = reduction_range;
 for k = 1:size(fft_a)
     if (f(k) >= low_range && f(k) <= high_range)
         % Make amplitude smaller
-        fft_a(k) = fft_a(k)*0.05;
+        fft_a(k) = fft_a(k)*0;
     end
 end
 
