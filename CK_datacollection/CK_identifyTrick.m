@@ -1,4 +1,4 @@
-function trickname = identifyTrick(filename)
+function trickname = CK_identifyTrick(filename)
 % This function takes in a file and outputs a string telling you what
 % longbaord dance trick it is. The possible tricks are push, 180 step,
 % cross step, and peter pan
@@ -34,7 +34,7 @@ if max_ax>0.45
     else
         trickname = "180 Step";
     end
-elseif max_az>0.6
+elseif max_az>0.7
     trickname = "Cross Step";
 else
     trickname = "Peterpan";
